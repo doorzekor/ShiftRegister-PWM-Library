@@ -102,7 +102,7 @@ public:
     for (int t = 0; t < resolution; ++t)
     {
       // set (pin % 8)th bit to (value > t)
-      this->data[t + shiftRegister * resolution] ^= (-(value > t) ^ this->data[t + shiftRegister * resolution]) & (1 << (pin % 8));
+      this->data[t + shiftRegister * resolution] ^= (-(value > t) ^ this->data[t + shiftRegister * resolution]) & (1 << ((8-pin) % 8));
     }
   };
 
